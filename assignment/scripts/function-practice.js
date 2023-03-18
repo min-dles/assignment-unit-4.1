@@ -75,14 +75,43 @@ function getLast( array ) {
 // Call the function with different array types to test the function:
 console.log(getLast(['A. first', 'B. second', 'C. third', 'D. last item of four']));
 console.log(getLast([4, 6, 10, 2021, 248]));
+console.log(getLast(['only one item in this array']));
+console.log(getLast([true, false]));
 console.log(getLast([]));
 
 // 7. Function to find a value in an array. Return true if the 
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find 
-function find( value, array ){
-  
-}
+function find(value, array){
+  for(object of array){
+    console.log('checking loop:', object);
+    if(object === value){
+    console.log('There is a match!');
+    return true;
+  } 
+} console.log('There is not a match.');
+  return false;
+} // end of find function
+
+/* First iteration /practice shown here. I ran into issues with the return ending the loop too soon:
+  for(let i=0; i < array.length; i++){
+    if(array[i] == value){
+      let valueFound = true;
+      console.log('There is a match:', value, '=', array[i]);
+    } else {
+      let noMatch = false;
+    }
+  } // end value check
+  if valueFound === true {
+    return true;
+  } else {
+    return false;
+  }*/
+
+// call the function a few times to check if it works:
+console.log(find('test', ['this', 'is', 'a', 'test', 'of', 'an', 'array']));
+console.log(find(403, [802, 33, 402, 400]));
+console.log(find(true, [false, false, false, true]));
 
 // ----------------------
 // Stretch Goals
